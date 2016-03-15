@@ -48,3 +48,5 @@ end
 
 
 gem 'simple_form'
+gem 'devise'
+gem 'cancancan', '~> 1.10'

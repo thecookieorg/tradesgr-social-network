@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :questions
+  devise_for :users
   get 'pages/index'
   root 'pages#index'
 
