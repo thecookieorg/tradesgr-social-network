@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
@@ -76,7 +76,7 @@ class QuestionsController < ApplicationController
     
     # Use callbacks to share common setup or constraints between actions.
     def set_question
-      @question = Question.find(params[:id])
+      @question = Question.find_by_slug(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

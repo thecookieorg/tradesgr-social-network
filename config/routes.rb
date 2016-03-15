@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   get 'pages/index'
   root 'pages#index'
+  
+  scope :users do
+    root :to => 'questions#index', :as => :user_root
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
